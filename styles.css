@@ -68,26 +68,26 @@ html {
 }
 
 .btn-secondary:hover {
-    background-color: var(--border-color);
+    background-color: var(--bg-card);
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background-color: transparent;
     color: var(--primary);
-    border-color: var(--primary);
+    border: 2px solid var(--primary);
 }
 
 .btn-outline:hover {
     background-color: var(--primary);
     color: var(--text-main);
+    transform: translateY(-2px);
 }
 
 .btn-block {
     display: flex;
     width: 100%;
 }
-
 .btn-sm {
     padding: 0.5rem 1rem;
 }
@@ -102,7 +102,7 @@ html {
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--bg-dark);
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary-hover);
 }
 
 .brand-logo {
@@ -159,19 +159,19 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .section-title {
     text-align: center;
     font-size: 1.75rem;
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 0 1rem 0.5rem 1rem;
 }
 
 .section-subtitle {
     text-align: center;
     color: var(--text-muted);
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .features-grid {
@@ -180,6 +180,7 @@ html {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    padding: 1rem;
 }
 
 .feature-card {
@@ -190,8 +191,26 @@ html {
     height: 15rem;
     padding: 2rem;
     background-color: var(--bg-card);
-    border: 2px solid var(--accent);
+    border: 2px solid var(--border-color);
     border-radius: 10px;
+    transition: 
+        border-color var(--transition-speed),
+        transform var(--transition-speed);
+}
+
+.feature-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.feature-desc {
+    color: var(--text-muted);
+}
+
+#pricing {
+    background-color: var(--bg-card);
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .pricing-grid {
@@ -203,5 +222,75 @@ html {
 }
 
 .tier-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 17.5rem;
+    height: 30rem;
+    padding: 2rem;
+    background-color: var(--bg-dark);
     border: 2px solid var(--border-color);
+    border-radius: 10px;
+    transition: 
+        transform var(--transition-speed);
+}
+
+.tier-card:hover {
+    transform: translateY(-4px);
+}
+
+.tier-title {
+    font-size: 1.25rem;
+}
+
+.tier-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.price-num {
+    font-size: 1.75rem;
+}
+
+.price-rate {
+    font-size: 0.75rem;
+}
+
+.tier-features {
+    padding-left: 1rem;
+}
+
+.featured {
+    position: relative;
+    border: 2px solid var(--accent);
+    height: 32rem;
+}
+
+.pop-tier-tag {
+    position: absolute;
+    top: 0;
+    align-self: center;
+    text-align: center;
+    width: 7.5rem;
+    height: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--bg-dark);
+    font-weight: 600;
+    background-color: var(--accent);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--bg-dark);
+    border-top: 2px solid var(--border-color);
+}
+
+.footer-copy {
+    color: var(--text-muted);
+    font-size: 0.70rem;
+    align-self: flex-end;
 }
