@@ -8,22 +8,21 @@
 /* Variables for theme */
 :root {
     --bg-dark: #030027;
-    --bg-card: #151E3F;
+    --bg-card: #050040;
     --primary: #FC5130;
     --primary-hover: #FC6649;
     --text-main: #F9FEFF;
     --text-muted: #DEFAFF;
     --border-color: #1B2752;
     --accent: #56E39F;
-    --font-heading: "Instrument Sans", Verdana, sans-serif;
-    --font-main: "Chivo Mono", Courier, monospace;
+    --font-family: "Instrument Sans", Verdana, sans-serif;
     --transition-speed: 0.2s;
 }
 
 /* Base settings for entire page */
 html {
     scroll-behavior: smooth;
-    font-family: var(--font-heading);
+    font-family: var(--font-family);
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.6;
@@ -63,13 +62,13 @@ html {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--bg-dark);
     color: var(--text-main);
-    border-color: var(--bg-card);
+    border: 2px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-    background-color: var(--bg-card);
+    background-color: var(--border-color);
     transform: translateY(-2px);
 }
 
@@ -91,5 +90,118 @@ html {
 
 .btn-sm {
     padding: 0.5rem 1rem;
-    font-size: 1.125rem;
+}
+
+/* Site structural layout */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--bg-dark);
+    border-bottom: 2px solid var(--primary);
+}
+
+.brand-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    color: var(--primary);
+    font-size: 1.75rem;
+}
+
+.nav-link {
+    padding: 0.5rem;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    row-gap: 1.5rem;
+    padding: 1rem;
+    height: 40rem;
+    background-image: url(./images/hero-bg-lowopacity.jpg);
+    border-bottom: 2px solid var(--primary-hover);
+}
+
+.site-subtitle {
+    width: 40rem;
+}
+
+.button-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.75rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    padding-bottom: 2rem;
+}
+
+.features-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20rem;
+    height: 15rem;
+    padding: 2rem;
+    background-color: var(--bg-card);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+}
+
+.pricing-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.tier-card {
+    border: 2px solid var(--border-color);
 }
