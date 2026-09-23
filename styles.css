@@ -1,5 +1,21 @@
+/* Reset browser styling */
 *, *::before, *::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+/* Variables for theme */
+:root {
+    --bg-dark: #030027;
+    --bg-card: #151E3F;
+    --primary: #FC5130;
+    --primary-hover: #FC6649;
+    --text-main: #F9FEFF;
+    --text-muted: #DEFAFF;
+    --border-color: #1B2752;
+    --accent: #56E39F;
+    --font-heading: "Instrument Sans", Verdana, sans-serif;
+    --font-main: "Chivo Mono", Courier, monospace;
+    --transition-speed: 0.2s;
 }
