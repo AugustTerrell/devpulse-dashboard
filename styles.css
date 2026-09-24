@@ -257,6 +257,7 @@ html {
 }
 
 .tier-features {
+    color: var(--text-muted);
     padding-left: 1rem;
 }
 
