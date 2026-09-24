@@ -199,7 +199,7 @@ html {
 }
 
 .feature-card:hover {
-    border-color: var(--accent);
+    border-color: var(--primary);
     transform: translateY(-4px);
 }
 
@@ -280,6 +280,43 @@ html {
     border-radius: 0px 0px 10px 10px;
 }
 
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.form-input {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+
+.required-star {
+    color: var(--primary);
+}
+
+.input-hint {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+#select-group {
+    padding-bottom: 1.5rem;
+}
+
 .site-footer {
     display: flex;
     justify-content: space-between;
@@ -291,6 +328,7 @@ html {
 
 .footer-copy {
     color: var(--text-muted);
-    font-size: 0.70rem;
+    font-size: 0.65rem;
     align-self: flex-end;
+    padding-left: 8rem;
 }
