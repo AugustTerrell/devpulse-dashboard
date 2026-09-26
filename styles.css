@@ -92,7 +92,7 @@ html {
     padding: 0.5rem 1rem;
 }
 
-/* Site structural layout */
+/* Header layout */
 .site-header {
     position: sticky;
     top: 0;
@@ -101,6 +101,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    line-height: 1.15rem;
     background-color: var(--bg-dark);
     border-bottom: 2px solid var(--primary-hover);
 }
@@ -120,77 +121,94 @@ html {
     font-size: 1.75rem;
 }
 
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .nav-link {
-    padding: 0.5rem;
-    color: var(--text-main);
+    color: var(--text-muted);
+    font-size: 0.95rem;
     text-decoration: none;
+    transition: 
+        color var(--transition-speed)
+        text-decoration var(--transition-speed)
+        transform var(--transition-speed);
 }
 
 .nav-link:hover {
+    color: var(--text-main);
     text-decoration: underline;
+    transform: translateY(-2px);
 }
 
+/* Hero section layout */
 .hero-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 1.5rem;
     text-align: center;
-    row-gap: 1.5rem;
-    padding: 1rem;
-    height: 40rem;
+    padding: 10rem 2rem;
+    max-width: 10000px;
+    margin: 0 auto;
     background-image: url(./images/hero-bg-lowopacity.jpg);
     border-bottom: 2px solid var(--primary-hover);
 }
 
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    max-width: 70%;
+}
+
 .site-subtitle {
-    width: 40rem;
+    max-width: 45%;
+    margin-bottom: 1rem;
 }
 
 .button-group {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
     gap: 1rem;
-    padding: 1rem;
 }
 
+/* General section layout */
 .section-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    max-width: 10000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 1.75rem;
-    padding: 0 1rem 0.5rem 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
-    text-align: center;
     color: var(--text-muted);
-    padding-bottom: 1rem;
 }
 
+/* Features section layout */
 .features-grid {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    max-width: 70%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    padding: 1rem;
 }
 
 .feature-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 20rem;
-    height: 15rem;
-    padding: 2rem;
     background-color: var(--bg-card);
+    padding: 2rem;
     border: 2px solid var(--border-color);
     border-radius: 10px;
     transition: 
@@ -203,10 +221,21 @@ html {
     transform: translateY(-4px);
 }
 
-.feature-desc {
-    color: var(--text-muted);
+.feature-stat {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
 }
 
+.feature-title {
+    margin-bottom: 0.75rem;
+}
+
+.feature-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Pricing section layout */
 #pricing {
     background-color: var(--bg-card);
     border-top: 2px solid var(--border-color);
@@ -214,73 +243,93 @@ html {
 }
 
 .pricing-grid {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    max-width: 70%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: stretch;
     gap: 2rem;
+    margin-top: 0.5rem;
 }
 
 .tier-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 17.5rem;
-    height: 30rem;
-    padding: 2rem;
     background-color: var(--bg-dark);
+    padding: 2rem;
     border: 2px solid var(--border-color);
     border-radius: 10px;
     transition: 
-        transform var(--transition-speed);
+        transform var(--transition-speed),
+        border-color var(--transition-speed);
 }
 
 .tier-card:hover {
-    transform: translateY(-4px);
+    transform: scale(1.02);
 }
 
 .tier-title {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.25rem;
 }
 
 .tier-desc {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.tier-price {
+    margin-bottom: 1.5rem;
 }
 
 .price-num {
     font-size: 1.75rem;
+    font-weight: 600;
 }
 
 .price-rate {
     font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
 .tier-features {
-    color: var(--text-muted);
-    padding-left: 1rem;
+    list-style-type: none;
+    margin-bottom: 2rem;
+    flex-grow: 1;
 }
 
-.featured {
+.tier-features li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border-color);
+    padding: 0.5rem 0;
+}
+
+.tier-card.featured {
     position: relative;
     border: 2px solid var(--accent);
-    height: 32rem;
+    transform: scale(1.04);
+}
+
+.tier-card.featured:hover {
+    transform: scale(1.06);
 }
 
 .pop-tier-tag {
     position: absolute;
-    top: 0;
-    align-self: center;
-    text-align: center;
-    width: 7.5rem;
-    height: 1.5rem;
-    font-size: 0.85rem;
-    color: var(--bg-dark);
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
     font-weight: 600;
+    text-transform: uppercase;
+    color: var(--bg-dark);
     background-color: var(--accent);
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 1000px;
+    padding: 0.1rem 0.65rem;
 }
 
+/* Form & registration section layout */
 .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -293,7 +342,7 @@ html {
 .form-group {
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .form-input {
@@ -302,7 +351,7 @@ html {
     background-color: var(--bg-dark);
     border-color: var(--border-color);
     border-radius: 6px;
-    padding: 0.5rem;
+    padding: 0.75rem;
 }
 
 .required-star {
@@ -315,9 +364,11 @@ html {
 }
 
 #select-group {
-    padding-bottom: 1.5rem;
+    margin-bottom: 2.25rem;
+    flex-grow: 1;
 }
 
+/* Footer layout */
 .site-footer {
     display: flex;
     justify-content: space-between;
