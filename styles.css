@@ -203,6 +203,7 @@ html {
     display: grid;
     max-width: 70%;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: start;
     gap: 2rem;
 }
 
@@ -233,6 +234,23 @@ html {
 .feature-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-indicator {
+    color: rgba(222, 250, 255, 0.7);
+    text-align: center;
+}
+
+.feature-list {
+    display: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-left: 1.5rem;
+}
+
+.feature-details:hover>.feature-list {
+    display: inherit;
 }
 
 /* Pricing section layout */
