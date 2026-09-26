@@ -207,6 +207,12 @@ html {
     gap: 2rem;
 }
 
+@media (max-width: 786px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .feature-card {
     background-color: var(--bg-card);
     padding: 2rem;
@@ -234,22 +240,19 @@ html {
 .feature-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: 0.75rem;
-}
-
-.feature-indicator {
-    color: rgba(222, 250, 255, 0.7);
-    text-align: center;
+    border-bottom: 2px solid rgba(222, 250, 255, 0.5);
+    padding-bottom: 1rem;
+    /* margin-bottom: 0.75rem; */
 }
 
 .feature-list {
     display: none;
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-left: 1.5rem;
+    margin: 0.75rem 0 0 1.5rem;
 }
 
-.feature-details:hover>.feature-list {
+.feature-card:hover>.feature-list {
     display: inherit;
 }
 
@@ -267,6 +270,12 @@ html {
     align-items: stretch;
     gap: 2rem;
     margin-top: 0.5rem;
+}
+
+@media (max-width: 786px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .tier-card {
